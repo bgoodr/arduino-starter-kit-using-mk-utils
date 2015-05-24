@@ -7,3 +7,8 @@ This package contains project files some of the projects in the
 but using the Makefile system in the
 [arduino-mk-utils](https://github.com/bgoodr/arduino-mk-utils)
 package.
+
+Projects included:
+
+* [project-03](project-03)
+
