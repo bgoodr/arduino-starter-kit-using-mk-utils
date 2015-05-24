@@ -1,5 +1,5 @@
 const int sensorPin = A0;
-const float baselineTemp = 20.0;
+const float baselineTemp = 23.73; // <-- change this value to the average value you see from the serial monitor before touching the TMP36
 
 
 void setup() {
