@@ -1,2 +1,9 @@
-# arduino-starter-kit-using-mk-utils
-Projects for the Arduino Starter Kit but including Makefiles using the arduino-mk-utils package
+arduino-starter-kit-using-mk-utils
+==================================
+
+This package contains project files some of the projects in the
+[Arduino Starter Kit]
+(http://www.amazon.com/Arduino-Starter-Official-170-page-Projects/dp/B009UKZV0A),
+but using the Makefile system in the
+[arduino-mk-utils](https://github.com/bgoodr/arduino-mk-utils)
+package.
