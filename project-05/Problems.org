@@ -17,3 +17,140 @@ angle = map(potVal, 0, 1023, 0, 170); // <-- changed
 #+END_EXAMPLE
 
 But, of course, then the servo does not span the full 180 degrees.
+
+Subsections below are different experiments and measurements to
+understand this behavior.
+
+** Single-power Supply Sag Theory
+
+Theory:
+
+ 1. When the servo reaches its highest level, it consumes more current
+    than the power supply feeding the USB cable from the laptop/PC can
+    supply (but this theory doesn't explain why that is!).
+ 2. This excessive consumption of current causes the power voltage
+    feeding both the Arduino and the potentiometer to drop.
+ 3. That drop is voltage-divided and transferred to the A0 pin.
+ 4. The Arduino reacts accordingly and feeds a smaller angle.
+ 5. The servo moves to that smaller angle, stops, and then stops
+    consuming excessive current.
+ 6. The power supply from the USB cable reacts by restoring its
+    voltage level.
+on the power supply being fed to the Arduino, and that drop being also
+seen by the potentiometer, and
+
+** Measure the values fed to the servo pin with servo disconnected
+
+If the values are fluctuating instead of being a consistent 179
+degrees, then the [[Single-power Supply Sag Theory]] is invalid because if
+the servo is not in the circuit, it could not be affecting the current
+loading on the USB power supply.
+
+Sequence:
+
+ 1. Change the program back to using the original value of the map() call.
+    #+BEGIN_EXAMPLE
+    angle = map(potVal, 0, 1023, 0, 179); // <-- original line in the book
+    #+END_EXAMPLE
+ 2. Leave the servo connected so we can see the buzzing behavior.
+ 3. Turn the pot to its lowest setting (probably this means fully
+    clockwise on the potentiometer in the kit, but double-check it
+    using a voltmeter with it disconnected from the breadboard to see
+    it is close to 0 ohms between middle and grounded pin).
+ 4. *Compile And Load Step*: Compile and upload the program so that it
+    running (close the screen window first with CTRL-a \).
+ 5. When the screen window popsup, type CTRL-a H to begin logging all output.
+ 6. Turn the pot fully counter-clockwise, wait for 3 seconds, turn the pot fully clockwise.
+ 7. In the screen window, type CTRL-a \ to terminate the screen session.
+ 8. Look in the current working directory for screenlog.n files.
+ 9. These are the type of values I saw in the middle of the output
+    while the pot was turned fully counter-clockwise:
+    #+BEGIN_EXAMPLE
+      potVal: 1023, angle: 179
+      potVal: 1009, angle: 176
+      potVal: 1023, angle: 179
+      potVal: 1023, angle: 179
+      potVal: 1010, angle: 176
+      potVal: 1023, angle: 179
+      potVal: 1010, angle: 176
+      potVal: 1009, angle: 176
+      potVal: 1023, angle: 179
+      potVal: 1008, angle: 176
+      potVal: 1016, angle: 177
+      potVal: 1023, angle: 179
+      potVal: 1008, angle: 176
+      potVal: 1023, angle: 179
+      potVal: 1023, angle: 179
+      potVal: 1009, angle: 176
+      potVal: 1023, angle: 179
+    #+END_EXAMPLE
+ 10. Disconnect USB power.
+ 11. Disconnect servo completely from the breadboard.
+ 12. Connect USB power.
+ 13. Repeat the above at *Compile And Load Step*.
+ 14. What are the values showing now?
+     #+BEGIN_EXAMPLE
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+       potVal: 1023, angle: 179
+     #+END_EXAMPLE
+ 15. So these are consistent values. So we cannot say that the [[Single-power Supply Sag Theory]] 
+     is invalid yet.
+c
+** Servo specs
+
+The servo reads SM-S2309S. From digging on the web I think the servo
+manufacturer page is:
+
+http://www.springrc.com/new/en/ProductView.asp?ID=43
+That indicates +/-60 degree range.
+
+But also there is this page:
+
+http://www.servodatabase.com/servo/springrc/sm-s2309s
+That indicates a full 180 degrees range.
+
+Which one is correct?
+
+** Servo is not a 180 degree span servo theory
+
+Reading the [[Servo specs]] it seems there is the possibility that
+maybe this servo might only has a 120 degree range, not +/- 180
+degrees as seems to be implied by the code in the starter kit.
+
+Could it be that we are operating outside of the range of this
+particular servo, and it is hitting some internal stop and thus
+causing the torque to increase as it fights to maintain that 180
+degree rotation?
+
+https://youtu.be/v2jpnyKPH64?t=4m15s describes this internal stop. At
+this point we don't know what is in the servo since it is fully
+enclosed.
+
+Before I tear open the servo to find out, we can proceed as if we
+think it is due to needing separate power supplies.
+
+** Measure the fluctuations on the USB power supply
+
+While the servo is connected, let's monitor the power supply on the
+oscilloscope when the pot is fully counter-clockwise.
+
+** Measure the pulse width of the servo input signal
+
+
+
+ 3. [ ] Disconnect the servo
+
+** Apply separate power sources for servo and Arduino
+
+Experiment: 
+
+ 1. [ ] Apply a separate power source for the servo.
+ 2. [ ] Connect the grounds between the two separate power supplies so
+    that they have a common ground.
