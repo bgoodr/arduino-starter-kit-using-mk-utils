@@ -1,0 +1,19 @@
+* Problem with buzzing at max potentiometer level
+
+With this mapping function call:
+
+#+BEGIN_EXAMPLE
+angle = map(potVal, 0, 1023, 0, 179); // <-- original line in the book
+#+END_EXAMPLE
+
+when the potentiometer is at full swing, the servo starts "buzzing"
+erradically.
+
+Lowering the maximum value down to 170 degrees causes the buzzing to
+stop when the pot is at its highest setting:
+
+#+BEGIN_EXAMPLE
+angle = map(potVal, 0, 1023, 0, 170); // <-- changed
+#+END_EXAMPLE
+
+But, of course, then the servo does not span the full 180 degrees.

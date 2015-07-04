@@ -18,7 +18,8 @@ void loop() {
   potVal = analogRead(potPin);
   Serial.print("potVal: ");
   Serial.print(potVal);
-  angle = map(potVal, 0, 1023, 0, 179);
+  // angle = map(potVal, 0, 1023, 0, 179); // <-- original line in the book
+  angle = map(potVal, 0, 1023, 0, 170); // <-- to prevent buzzing when pot is at its highest setting (See Problems.org for details)
   Serial.print(", angle: ");
   Serial.println(angle);
   myServo.write(angle);
