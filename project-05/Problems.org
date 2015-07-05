@@ -2,7 +2,9 @@
 
 Github does not render inter-page links in this .org file
 properly. E.g., the link to [[Single-power Supply Sag Theory]] should
-browse to the section below but instead gives a 404.
+browse to the section below but instead gives a 404. I'm reporting
+this to GitHub to see if they can provide a fix. For now, just scroll
+about in the browser until they fix it.
 
 * Problem with buzzing at max potentiometer level
 
