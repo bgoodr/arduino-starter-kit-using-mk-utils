@@ -152,6 +152,7 @@ oscilloscope when the pot is fully counter-clockwise.
 Bitmap stored from oscilloscope:
 
 file:down-slope-trigger-on-VCC.bmp
+(hack for GitHub to display it: [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC.bmp][down-slope-trigger-on-VCC.bmp]])
 
 Trigger level was on falling edge on VCC around 4.40V. Clearly shows a
 sag. This was to catch when the VCC sag event occurred.
