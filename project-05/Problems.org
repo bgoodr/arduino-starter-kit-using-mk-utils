@@ -149,6 +149,16 @@ think it is due to needing separate power supplies.
 While the servo is connected, let's monitor the power supply on the
 oscilloscope when the pot is fully counter-clockwise.
 
+Bitmap stored from oscilloscope:
+
+file:down-slope-trigger-on-VCC.bmp
+
+Trigger level was on falling edge on VCC around 4.40V. Clearly shows a
+sag. This was to catch when the VCC sag event occurred.
+
+The blue trace is VCC. The yellow trace is for the servo input (coming
+from pin 9 on the Arduino).
+
 ** Measure the pulse width of the servo input signal
 
 
