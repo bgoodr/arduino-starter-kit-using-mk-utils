@@ -1,0 +1,54 @@
+* A section heading 1
+
+This org file is to demonstrate the web rendering bug to GitHub.
+
+This is a link to [[A section heading 4]] which is a section in this
+org file. It should be rendered properly such that when the user
+browses to this section and clicks on that link, that section should
+be viewed in that page. But instead it renders improperly and gives a
+404 error.
+
+* A section heading 2
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+* A section heading 3
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+* A section heading 4
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+p* A section heading 5
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
+
+Bla bla bla.
