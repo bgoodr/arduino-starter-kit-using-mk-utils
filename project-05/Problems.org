@@ -1,3 +1,9 @@
+* Warning about broken inter-page links
+
+Github does not render inter-page links in this .org file
+properly. E.g., the link to [[Single-power Supply Sag Theory]] should
+browse to the section below but instead gives a 404.
+
 * Problem with buzzing at max potentiometer level
 
 With this mapping function call:
@@ -102,7 +108,7 @@ Sequence:
      #+END_EXAMPLE
  15. So these are consistent values. So we cannot say that the [[Single-power Supply Sag Theory]] 
      is invalid yet.
-c
+
 ** Servo specs
 
 The servo reads SM-S2309S. From digging on the web I think the servo
