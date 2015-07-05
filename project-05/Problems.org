@@ -146,19 +146,32 @@ think it is due to needing separate power supplies.
 
 ** Measure the fluctuations on the USB power supply
 
+Using a Rigol DS1102E scope:
+
 While the servo is connected, let's monitor the power supply on the
-oscilloscope when the pot is fully counter-clockwise.
+oscilloscope when the pot midway but being turned a bit (around the
+90% point). Capture the sag when it occurs.
 
-Bitmap stored from oscilloscope:
+Below these bitmaps were taken using Display All ON: Measure menu, Display All set to ON.
 
-file:down-slope-trigger-on-VCC.bmp
-(hack for GitHub to display it: [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC.bmp][down-slope-trigger-on-VCC.bmp]])
+The resulting bitmaps were:
 
-Trigger level was on falling edge on VCC around 4.40V. Clearly shows a
-sag. This was to catch when the VCC sag event occurred.
+For CH1 (yellow trace, servo input): [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-mid-pot.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
+For CH2 (blue trace, VCC): [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-mid-pot.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
 
-The blue trace is VCC. The yellow trace is for the servo input (coming
-from pin 9 on the Arduino).
+The trigger level was on falling edge on VCC around 4.40V. Clearly
+shows a sag.
+
+Repeat the same as above, but when the pot is at fully counter-clockwise:
+
+file:down-slope-trigger-on-VCC-at-full-pot-CH1.bmp
+[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-mid-pot.bmp][down-slope-trigger-on-VCC-at-full-pot-CH1.bmp]]
+
+Same thing as above but on CH2 which is power supply from the Arduino (should be ~5V):
+
+file:down-slope-trigger-on-VCC-at-full-pot-CH2.bmp
+[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-mid-pot.bmp][down-slope-trigger-on-VCC-at-full-pot-CH2.bmp]]
+
 
 ** Measure the pulse width of the servo input signal
 
