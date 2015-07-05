@@ -156,8 +156,13 @@ Below these bitmaps were taken using Display All ON: Measure menu, Display All s
 
 The resulting bitmaps were:
 
-For CH1 (yellow trace, servo input): [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
-For CH2 (blue trace, VCC): [[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
+For CH1 (yellow trace, servo input):
+file:down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp
+[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
+
+For CH2 (blue trace, VCC):
+file:down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp
+[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp]]
 
 The trigger level was on falling edge on VCC around 4.40V. Clearly
 shows a sag.
