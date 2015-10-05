@@ -1,0 +1,3 @@
+build-*
+# Ignore Linux screen utility output from using CTRL-a H:
+screenlog.*
