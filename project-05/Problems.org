@@ -158,7 +158,7 @@ The resulting bitmaps were:
 
 For CH1 (yellow trace, servo input):
 file:down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH1.bmp
-[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH1.bmp]]
+[[https://raw.githubusercontent.com/bgoodr/arduino-starter-kit-using-mk-utils/master/project-05/down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH1.bmp][down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH1.bmp]]
 
 For CH2 (blue trace, VCC):
 file:down-slope-trigger-on-VCC-at-1.6ms-pulse-width-pot-CH2.bmp
